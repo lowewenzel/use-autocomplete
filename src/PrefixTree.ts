@@ -28,11 +28,10 @@ class PrefixTreeNode {
     throw Error(`No child with character: ${character}`);
   }
 
-  addChild(character: string, childNode: PrefixTreeNode): null {
+  addChild(character: string, childNode: PrefixTreeNode) {
     if (!this.hasChild(character)) {
       this.children[character] = childNode;
     }
-    throw Error(`No child with character: ${character}`);
   }
 
   toString(): string {
@@ -68,7 +67,7 @@ class PrefixTree {
 
     node = this.root;
 
-    for (const character of str) {
+    for (const character of str.toLowerCase()) {
       if (!node.hasChild(character)) {
         node.addChild(character, new PrefixTreeNode(character));
       }
@@ -80,14 +79,34 @@ class PrefixTree {
     this.size += 1;
   }
 
-  complete(prefix: string) {}
+  complete(prefix: string): Array<string> {
+    const completions: Array<string> = [];
+
+    let [node] = this._find_node(prefix);
+    if (!node || node === null) {
+      return [];
+    }
+
+    if (node.isTerminal()) {
+      completions.push(prefix);
+    }
+
+    Object.keys(node.children).forEach((key) => {
+      const child = node!.children[key];
+      this._traverse(child, prefix + child.character, (str: string) => {
+        completions.push(str);
+      });
+    });
+
+    return completions;
+  }
 
   strings() {}
 
   _find_node(str: string): [PrefixTreeNode | null, number] {
     let depth = 0;
 
-    if (!!str.length) return [this.root, 0];
+    if (!!!str.length) return [this.root, 0];
 
     let node = this.root;
 
@@ -104,7 +123,14 @@ class PrefixTree {
     return [node, depth];
   }
 
-  _traverse(node: PrefixTreeNode, prefix: string, visit: Function) {}
+  _traverse(node: PrefixTreeNode, prefix: string, visit: Function) {
+    if (node.isTerminal()) {
+      visit(prefix);
+    }
+    Object.values(node.children).forEach((n) => {
+      this._traverse(n, prefix + n.character, visit);
+    });
+  }
 }
 
 export default PrefixTree;
