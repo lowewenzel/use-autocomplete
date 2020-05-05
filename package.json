@@ -1,8 +1,11 @@
 {
-  "name": "use-autocomplete",
+  "name": "@lowewenzel/use-autocomplete",
   "version": "1.1.0",
   "description": "The template that will help you quickly start developing your NPM package for React",
   "main": "./dist/index.js",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
   "scripts": {
     "build": "webpack --mode production",
     "lint": "eslint --report-unused-disable-directives src",
