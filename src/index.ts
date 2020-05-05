@@ -6,3 +6,5 @@ const useAutocomplete = () => {
 
   console.log(tree);
 };
+
+export default useAutocomplete;
