@@ -3,15 +3,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  entry: './index.js',
+  entry: './index.ts',
   output: {
-    path: __dirname + '/dist',
+    path: `${__dirname}/dist`,
     filename: './index.js',
     publicPath: '/',
     libraryTarget: 'commonjs2',
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.js', '.ts'],
     modules: ['node_modules'],
   },
   optimization: {
@@ -22,6 +22,11 @@ module.exports = {
       {
         test: /\.jsx?$/,
         loader: 'babel-loader',
+      },
+      {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.(sass|scss)$/,

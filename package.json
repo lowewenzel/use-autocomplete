@@ -1,5 +1,5 @@
 {
-  "name": "react-npm-package-template",
+  "name": "use-autocomplete",
   "version": "1.0.0",
   "description": "The template that will help you quickly start developing your NPM package for React",
   "main": "./dist/index.js",
@@ -13,10 +13,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/awibox/react-npm-package-template.git"
+    "url": "git+https://github.com/lowewenzel/use-autocomplete.git"
   },
   "keywords": [
     "react-component",
+    "hook",
+    "react-hook",
+    "autocomplete",
     "npm-package",
     "template",
     "css-modules",
@@ -27,12 +30,8 @@
     "webpack",
     "scss"
   ],
-  "author": "awibox",
+  "author": "lowewenzel",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/awibox/react-npm-package-template/issues"
-  },
-  "homepage": "https://github.com/awibox/react-npm-package-template#readme",
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
@@ -58,12 +57,14 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "sass-loader": "^8.0.2",
+    "typescript": "^3.8.3",
     "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "@types/react": "^16.9.34",
+    "prop-types": "^15.7.2",
+    "ts-loader": "^7.0.2"
   },
-  "dependencies": {
-    "prop-types": "^15.7.2"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^16.13.0",
     "react-dom": "^16.13.0"
