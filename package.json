@@ -1,7 +1,7 @@
 {
   "name": "@lowewenzel/use-autocomplete",
   "version": "1.1.0",
-  "description": "The template that will help you quickly start developing your NPM package for React",
+  "description": "React use-autocomplete hook for autocomplete components",
   "main": "./dist/index.js",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
