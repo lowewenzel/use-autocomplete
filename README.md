@@ -10,7 +10,7 @@
 
 This is a hook, `useAutocomplete`, that returns autocomplete values using a prefix tree. This is for front-end autocompletion rather than remote autocompletion, which is more commonly used.
 
-Use it in any input component, see [examples]('./examples/') for more.
+Use it in any input component, see [examples](./examples) for more.
 
 ## How to install
 
