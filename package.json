@@ -62,7 +62,7 @@
     "sass-loader": "^8.0.2",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0",
-    "webpack-cli": "^3.3.11",
+    "webpack-cli": "^3.3.12",
     "@types/react": "^16.9.34",
     "prop-types": "^15.7.2",
     "ts-loader": "^7.0.2"
